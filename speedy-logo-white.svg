@@ -1,24 +1,46 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 280" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 270" role="img" aria-labelledby="title desc">
   <title id="title">Speedy Transportation LLC logo</title>
-  <desc id="desc">White Speedy wordmark with red motion lines and transportation text.</desc>
+  <desc id="desc">Clean white Speedy wordmark with red trucking motion mark.</desc>
   <defs>
-    <filter id="redGlow" x="-20%" y="-40%" width="140%" height="180%">
-      <feGaussianBlur stdDeviation="8" result="blur"/>
-      <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0.95 0 0 0 0 0.04 0 0 0 0 0.10 0 0 0 0.9 0"/>
+    <filter id="redGlow" x="-18%" y="-45%" width="136%" height="190%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0.95 0 0 0 0 0.03 0 0 0 0 0.09 0 0 0 0.78 0"/>
       <feMerge>
         <feMergeNode/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
-    <filter id="whiteShadow" x="-20%" y="-40%" width="140%" height="180%">
-      <feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#000000" flood-opacity="0.5"/>
+    <filter id="wordShadow" x="-12%" y="-35%" width="126%" height="170%">
+      <feDropShadow dx="0" dy="12" stdDeviation="7" flood-color="#000000" flood-opacity="0.58"/>
     </filter>
   </defs>
+
   <g filter="url(#redGlow)" fill="#f20f22">
-    <path d="M274 89h324c10 0 16 6 16 16v74l-10-34c-2-8-9-14-18-15l-330-22 280-8-340-10z"/>
-    <path d="M378 120h210c7 0 13 5 15 12l8 28-15-15c-4-4-9-6-15-7l-216-9 158-5-145-4z"/>
-    <path d="M622 90h48c55 0 81 36 111 72 9 11 18 18 33 21l49 11c28 7 46 28 53 69h-37c-7-28-25-43-52-43-29 0-52 18-58 43h-98V90zM688 110v50h82c-25-29-45-47-82-50z"/>
+    <path d="M310 92h318c12 0 20 8 20 20v56l-14-28c-5-10-14-16-26-17L302 107l260-6-252-9z"/>
+    <path d="M420 124h196c11 0 20 7 24 18l7 20-18-12c-8-5-17-8-27-8l-190-9 150-5-142-4z" opacity="0.92"/>
+    <path d="M660 92h56c54 0 86 28 125 76 9 11 20 18 36 22l40 10c30 7 49 29 57 66h-45c-6-26-27-42-55-42-30 0-53 17-60 42H660V92zM703 118v50h100c-29-31-58-48-100-50z"/>
+    <path d="M854 232c22 0 41 13 49 34h-97c8-21 26-34 48-34z" opacity="0.9"/>
   </g>
-  <text x="28" y="184" fill="#ffffff" font-family="Arial Black, Impact, sans-serif" font-size="108" font-style="italic" font-weight="900" filter="url(#whiteShadow)">SPEEDY</text>
-  <text x="34" y="244" fill="#f20f22" font-family="Arial Black, Impact, sans-serif" font-size="43" font-style="italic" font-weight="900" filter="url(#redGlow)">TRANSPORTATION LLC.</text>
+
+  <text x="30" y="177"
+        fill="#ffffff"
+        stroke="#07080b"
+        stroke-width="5"
+        paint-order="stroke fill"
+        font-family="Impact, 'Arial Black', sans-serif"
+        font-size="116"
+        font-style="italic"
+        font-weight="900"
+        filter="url(#wordShadow)">SPEEDY</text>
+
+  <text x="38" y="238"
+        fill="#f20f22"
+        stroke="#4b0208"
+        stroke-width="1.2"
+        paint-order="stroke fill"
+        font-family="Impact, 'Arial Black', sans-serif"
+        font-size="42"
+        font-style="italic"
+        font-weight="900"
+        filter="url(#redGlow)">TRANSPORTATION LLC.</text>
 </svg>
