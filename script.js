@@ -1,6 +1,6 @@
 const SITE_CONFIG = {
   companyName: "Speedy Transportation LLC",
-  email: "info@speedytransportationllc.com",
+  email: "dispatch@speedytransportationllc.com",
   phone: "(555) 017-2500"
 };
 

@@ -13,11 +13,7 @@
   <body>
     <header class="site-header" data-header>
       <a class="brand" href="#home" aria-label="Speedy Transportation LLC home">
-        <span class="brand-mark">ST</span>
-        <span>
-          <strong>Speedy Transportation LLC</strong>
-          <small>Carrier & Logistics</small>
-        </span>
+        <img class="brand-logo" src="speedy-logo.png" alt="Speedy Transportation LLC">
       </a>
       <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">
         <span></span>
@@ -36,12 +32,16 @@
 
     <main>
       <section class="hero" id="home">
-        <img class="hero-image" src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=2200&q=85" alt="Modern semi truck hauling freight on a highway">
+        <video class="hero-image hero-video" autoplay muted loop playsinline poster="speedy-logo.png" aria-label="Speedy Transportation trucking video">
+          <source src="hero-video.mp4" type="video/mp4">
+        </video>
         <div class="hero-overlay"></div>
+        <div class="hero-redline" aria-hidden="true"></div>
         <div class="hero-content">
-          <p class="eyebrow">Reliable freight. Professional drivers. On-time delivery.</p>
-          <h1>Modern trucking built for shippers and drivers who move with purpose.</h1>
-          <p class="hero-copy">Dedicated lanes, regional freight, and career opportunities backed by responsive dispatch and clean communication.</p>
+          <img class="hero-logo" src="speedy-logo.png" alt="Speedy Transportation LLC">
+          <p class="eyebrow">Dispatch-ready freight. Driver-focused operations.</p>
+          <h1>Fast, clean, professional trucking for freight that cannot wait.</h1>
+          <p class="hero-copy">Speedy Transportation LLC moves with sharp dispatch, dependable drivers, and a modern application process built for real-world trucking.</p>
           <div class="hero-actions">
             <a class="btn primary" href="#quote">Request Freight Help</a>
             <a class="btn secondary" href="#apply">Apply as a Driver</a>
@@ -65,16 +65,16 @@
 
       <section class="section trust-band" aria-label="Operating standards">
         <div class="metric">
-          <span>98%</span>
-          <p>Target on-time delivery</p>
+          <span>Speed</span>
+          <p>Responsive dispatch and fast follow-up</p>
         </div>
         <div class="metric">
           <span>Dry Van</span>
           <p>Power-only and dedicated options</p>
         </div>
         <div class="metric">
-          <span>Fast</span>
-          <p>Same-day recruiting response</p>
+          <span>CDL</span>
+          <p>Online driver applications with uploads</p>
         </div>
       </section>
 
@@ -255,7 +255,7 @@
         </div>
         <div class="contact-actions">
           <a class="contact-link" href="tel:+15550172500">Call: (555) 017-2500</a>
-          <a class="contact-link" data-email-link href="mailto:info@speedytransportationllc.com">Email: info@speedytransportationllc.com</a>
+          <a class="contact-link" data-email-link href="mailto:dispatch@speedytransportationllc.com">Email: dispatch@speedytransportationllc.com</a>
           <button class="contact-link button-link" type="button" data-chat-open>Chat Now</button>
         </div>
       </section>
@@ -268,7 +268,7 @@
           <strong>Chat now</strong>
           <span>Usually replies by email</span>
         </div>
-        <button type="button" data-chat-close aria-label="Close chat">x</button>
+          <button type="button" data-chat-close aria-label="Close chat">x</button>
       </div>
       <div class="chat-body">
         <p class="bot-message">Hi, send your question and dispatch or recruiting will follow up by email.</p>
