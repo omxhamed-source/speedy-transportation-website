@@ -13,7 +13,7 @@
   <body>
     <header class="site-header" data-header>
       <a class="brand" href="#home" aria-label="Speedy Transportation LLC home">
-        <img class="brand-logo" src="speedy-logo.png" alt="Speedy Transportation LLC">
+        <img class="brand-logo" src="speedy-logo-white.svg" alt="Speedy Transportation LLC">
       </a>
       <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">
         <span></span>
@@ -32,13 +32,50 @@
 
     <main>
       <section class="hero" id="home">
-        <video class="hero-image hero-video" autoplay muted loop playsinline poster="speedy-logo.png" aria-label="Speedy Transportation trucking video">
-          <source src="hero-video.mp4" type="video/mp4">
-        </video>
+        <div class="dock-scene" aria-label="Animated trucks backing into a loading dock">
+          <div class="dock-building">
+            <div class="dock-roof"></div>
+            <div class="dock-bay bay-left">
+              <span>Dock 01</span>
+            </div>
+            <div class="dock-bay bay-center active">
+              <span>Dock 02</span>
+            </div>
+            <div class="dock-bay bay-right">
+              <span>Dock 03</span>
+            </div>
+          </div>
+          <div class="dock-floor">
+            <span class="guide-line guide-left"></span>
+            <span class="guide-line guide-right"></span>
+            <span class="floor-stripe stripe-one"></span>
+            <span class="floor-stripe stripe-two"></span>
+            <span class="floor-stripe stripe-three"></span>
+          </div>
+          <div class="animated-truck truck-primary">
+            <div class="trailer-back">
+              <img src="speedy-logo-white.svg" alt="">
+              <span class="dock-warning">BACKING</span>
+              <span class="tail-light left"></span>
+              <span class="tail-light right"></span>
+            </div>
+            <span class="truck-shadow"></span>
+          </div>
+          <div class="animated-truck truck-secondary">
+            <div class="trailer-back">
+              <strong>SPEEDY</strong>
+              <span class="tail-light left"></span>
+              <span class="tail-light right"></span>
+            </div>
+            <span class="truck-shadow"></span>
+          </div>
+          <div class="dock-light light-one"></div>
+          <div class="dock-light light-two"></div>
+        </div>
         <div class="hero-overlay"></div>
         <div class="hero-redline" aria-hidden="true"></div>
         <div class="hero-content">
-          <img class="hero-logo" src="speedy-logo.png" alt="Speedy Transportation LLC">
+          <img class="hero-logo" src="speedy-logo-white.svg" alt="Speedy Transportation LLC">
           <p class="eyebrow">Dispatch-ready freight. Driver-focused operations.</p>
           <h1>Fast, clean, professional trucking for freight that cannot wait.</h1>
           <p class="hero-copy">Speedy Transportation LLC moves with sharp dispatch, dependable drivers, and a modern application process built for real-world trucking.</p>

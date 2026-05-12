@@ -169,7 +169,7 @@ textarea {
   background: #050609;
 }
 
-.hero-image,
+.dock-scene,
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -177,19 +177,293 @@ textarea {
   height: 100%;
 }
 
-.hero-image {
-  object-fit: cover;
-}
-
-.hero-video {
-  filter: saturate(1.1) contrast(1.08) brightness(0.72);
+.dock-scene {
+  z-index: 1;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 68% 28%, rgba(242, 15, 34, 0.34), transparent 27%),
+    linear-gradient(145deg, #07080b 0%, #151a23 48%, #07080b 100%);
 }
 
 .hero-overlay {
+  z-index: 2;
   background:
-    radial-gradient(circle at 70% 38%, rgba(242, 15, 34, 0.32), transparent 28%),
-    linear-gradient(90deg, rgba(5, 6, 9, 0.94) 0%, rgba(5, 6, 9, 0.78) 44%, rgba(5, 6, 9, 0.32) 100%),
-    linear-gradient(0deg, rgba(5, 6, 9, 0.78), transparent 46%);
+    linear-gradient(90deg, rgba(5, 6, 9, 0.96) 0%, rgba(5, 6, 9, 0.72) 44%, rgba(5, 6, 9, 0.16) 100%),
+    linear-gradient(0deg, rgba(5, 6, 9, 0.84), transparent 48%);
+}
+
+.dock-building {
+  position: absolute;
+  top: 8%;
+  right: clamp(18px, 6vw, 96px);
+  width: min(760px, 60vw);
+  height: 38%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  padding: 48px 28px 28px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)),
+    #141923;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+}
+
+.dock-roof {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 34px;
+  background: linear-gradient(90deg, #2a303b, #10141c);
+  border-bottom: 3px solid var(--red);
+  box-shadow: 0 0 26px rgba(242, 15, 34, 0.52);
+}
+
+.dock-bay {
+  position: relative;
+  display: grid;
+  place-items: end center;
+  padding-bottom: 12px;
+  overflow: hidden;
+  background:
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.06) 0 8px, transparent 8px 26px),
+    linear-gradient(180deg, #242b36, #07090d);
+  border: 3px solid #343c49;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.dock-bay::after {
+  content: "";
+  position: absolute;
+  inset: auto 10% 0;
+  height: 10px;
+  background: var(--red);
+  box-shadow: 0 0 20px rgba(242, 15, 34, 0.78);
+}
+
+.dock-bay.active {
+  border-color: #6a7484;
+  box-shadow: inset 0 0 30px rgba(242, 15, 34, 0.18);
+}
+
+.dock-floor {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: min(900px, 70vw);
+  height: 62%;
+  background:
+    linear-gradient(110deg, transparent 0 44%, rgba(255, 255, 255, 0.07) 45% 45.4%, transparent 46%),
+    linear-gradient(70deg, transparent 0 51%, rgba(255, 255, 255, 0.06) 52% 52.4%, transparent 53%),
+    linear-gradient(180deg, rgba(32, 38, 48, 0.75), rgba(5, 6, 9, 0.96));
+  clip-path: polygon(13% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.guide-line {
+  position: absolute;
+  bottom: 8%;
+  width: 3px;
+  height: 86%;
+  background: linear-gradient(180deg, rgba(242, 15, 34, 0), rgba(242, 15, 34, 0.95));
+  transform-origin: bottom;
+  box-shadow: 0 0 16px rgba(242, 15, 34, 0.7);
+}
+
+.guide-left {
+  right: 48%;
+  transform: rotate(13deg);
+}
+
+.guide-right {
+  right: 24%;
+  transform: rotate(-8deg);
+}
+
+.floor-stripe {
+  position: absolute;
+  left: 26%;
+  right: 10%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.stripe-one {
+  top: 24%;
+}
+
+.stripe-two {
+  top: 48%;
+}
+
+.stripe-three {
+  top: 72%;
+}
+
+.animated-truck {
+  position: absolute;
+  z-index: 2;
+  width: min(260px, 22vw);
+  aspect-ratio: 1 / 1.15;
+  will-change: transform, opacity;
+}
+
+.truck-primary {
+  right: 26%;
+  bottom: -24%;
+  animation: backIntoDock 7.5s cubic-bezier(0.38, 0, 0.18, 1) infinite;
+}
+
+.truck-secondary {
+  right: 58%;
+  bottom: -16%;
+  width: min(180px, 16vw);
+  opacity: 0.72;
+  animation: sideDock 9s cubic-bezier(0.38, 0, 0.18, 1) infinite 1.2s;
+}
+
+.trailer-back {
+  position: relative;
+  height: 78%;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.04)),
+    #1a1f29;
+  border: 4px solid #727b89;
+  border-radius: 8px 8px 4px 4px;
+  box-shadow:
+    inset 0 0 0 2px rgba(0, 0, 0, 0.45),
+    0 24px 60px rgba(0, 0, 0, 0.42);
+}
+
+.trailer-back img {
+  width: 82%;
+  height: auto;
+}
+
+.trailer-back strong {
+  color: #fff;
+  font-size: clamp(1.2rem, 2.4vw, 2rem);
+  font-style: italic;
+  text-transform: uppercase;
+}
+
+.dock-warning {
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  color: var(--red);
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
+.tail-light {
+  position: absolute;
+  bottom: 16px;
+  width: 14px;
+  height: 26px;
+  background: var(--red);
+  box-shadow: 0 0 18px rgba(242, 15, 34, 0.9);
+  animation: tailPulse 1.2s ease-in-out infinite;
+}
+
+.tail-light.left {
+  left: 18px;
+}
+
+.tail-light.right {
+  right: 18px;
+}
+
+.truck-shadow {
+  position: absolute;
+  left: 7%;
+  right: 7%;
+  bottom: 11%;
+  height: 18px;
+  background: rgba(0, 0, 0, 0.55);
+  filter: blur(10px);
+  border-radius: 50%;
+}
+
+.dock-light {
+  position: absolute;
+  top: 18%;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(242, 15, 34, 0.72), transparent 65%);
+  animation: lightSweep 3.8s ease-in-out infinite;
+}
+
+.light-one {
+  right: 43%;
+}
+
+.light-two {
+  right: 12%;
+  animation-delay: 1.4s;
+}
+
+@keyframes backIntoDock {
+  0% {
+    transform: translate3d(28%, 18%, 0) scale(1.18);
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  58% {
+    transform: translate3d(-10%, -76%, 0) scale(0.66);
+    opacity: 1;
+  }
+  76% {
+    transform: translate3d(-10%, -76%, 0) scale(0.66);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(28%, 18%, 0) scale(1.18);
+    opacity: 0;
+  }
+}
+
+@keyframes sideDock {
+  0% {
+    transform: translate3d(30%, 16%, 0) scale(1);
+    opacity: 0;
+  }
+  18% {
+    opacity: 0.72;
+  }
+  62% {
+    transform: translate3d(4%, -62%, 0) scale(0.58);
+    opacity: 0.72;
+  }
+  80% {
+    transform: translate3d(4%, -62%, 0) scale(0.58);
+    opacity: 0.72;
+  }
+  100% {
+    transform: translate3d(30%, 16%, 0) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes tailPulse {
+  50% {
+    opacity: 0.42;
+  }
+}
+
+@keyframes lightSweep {
+  50% {
+    transform: translateY(10px) scale(1.18);
+    opacity: 0.52;
+  }
 }
 
 .hero-redline {
@@ -768,6 +1042,33 @@ textarea:focus {
   .hero {
     min-height: 980px;
     align-items: flex-start;
+  }
+
+  .dock-building {
+    top: 43%;
+    right: 18px;
+    left: 18px;
+    width: auto;
+    height: 24%;
+    gap: 10px;
+    padding: 40px 14px 16px;
+  }
+
+  .dock-floor {
+    width: 100%;
+    height: 56%;
+  }
+
+  .animated-truck {
+    width: 190px;
+  }
+
+  .truck-primary {
+    right: 30%;
+  }
+
+  .truck-secondary {
+    display: none;
   }
 
   .hero-content {

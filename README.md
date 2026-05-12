@@ -4,8 +4,8 @@ Open `index.html` in a browser to view the site.
 
 The homepage uses:
 
-- `speedy-logo.png` for the brand logo
-- `hero-video.mp4` for the cinematic trucking hero background
+- `speedy-logo-white.svg` for the white/red brand logo
+- A CSS loading-dock animation with trucks backing into dock doors
 
 ## Netlify Forms
 
